@@ -1,6 +1,3 @@
-
-
-
 public class Main {
 
     public static void main(String[] args) {
@@ -13,11 +10,10 @@ public class Main {
         myQueue.printQueue();
 
         System.out.println("Queue size: " + myQueue.size());
-        Object[] returnedDeletedValues = myQueue.dequeue(3);
-        Integer[] deletedValues = new Integer[returnedDeletedValues.length];
-        for (int i = 0; i < deletedValues.length; i++) {
-            deletedValues[i] = (Integer) returnedDeletedValues[i];
-            System.out.println(deletedValues[i]);
-        }
+        // Throws exception: Exception in thread "main" java.lang.ClassCastException: class [Ljava.lang.Object; cannot be cast to class [Ljava.lang.Integer; ([Ljava.lang.Object; and [Ljava.lang.Integer; are in module java.base of loader 'bootstrap')
+        //	at Main.main(Main.java:13)
+        // The method call works, the exception is thrown during the casting
+        Integer[] returnedDeletedValues = myQueue.dequeue(2);
+        System.out.println(myQueue.dequeue(2).getClass());
     }
 }
