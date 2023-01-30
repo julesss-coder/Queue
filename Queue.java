@@ -1,5 +1,6 @@
 import DoublyLinkedList.DoublyLinkedList;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Queue<T> {
@@ -22,10 +23,16 @@ public class Queue<T> {
     }
 
     public T[] dequeue(int n) {
-        //FIXME If this doesn't work, use Alex's solution
-
+        // FIXME If this doesn't work, use Alex's solution
+//        @SuppressWarnings("unchecked")
+//        T[] deletedValues = (T[]) new Object[n];
+//        System.out.println(deletedValues.length);
+//        System.out.println(deletedValues.getClass());
+        // FIXME: Mike says: Use reflection instead
+        // FIXME Andi's solution:
         @SuppressWarnings("unchecked")
-        T[] deletedValues = (T[]) new Object[n];
+        T[] deletedValues = (T[]) Array.newInstance(list.searchList(0).getClass(), n);
+
         System.out.println(deletedValues.length);
         System.out.println(deletedValues.getClass());
 
