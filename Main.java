@@ -14,6 +14,5 @@ public class Main {
         //	at Main.main(Main.java:13)
         // The method call works, the exception is thrown during the casting
         Integer[] returnedDeletedValues = myQueue.dequeue(2);
-        System.out.println(myQueue.dequeue(2).getClass());
     }
 }
